@@ -13,14 +13,14 @@ let number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // Alphabetical characters
 let lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Space is for the Uppercase conversion
-let upperCase = [];
+let upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 var input;
 
 // Write password to the #password input
 var generatePassword = function() {
-  var userLenght = parseInt(prompt("How long would you like your password? No less than 8 or more than 128 characters!")) ;
-  if(!isNaN(userLenght) && userLenght >= 8 && userLenght <= 128) {
+  var userLength = parseInt(prompt("How long would you like your password? No less than 8 or more than 128 characters!")) ;
+  if(!isNaN(userLength) && userLength >= 8 && userLength <= 128) {
     console.log("User Lenght approved!") ; 
     confirmSpecialCharacter = confirm("Do you want special characters?");
     confirmUpperCase = confirm("Do you want uppercase letters?") ;
@@ -79,12 +79,22 @@ var generatePassword = function() {
             input = lowerCase;
             
           } 
+        }else {
+          alert("Must meet condition requirements!") ;
+        }
 
-  }else {
-    alert("Must meet condition requirements!") ;
-  }
-}
+        var getPassword = [];
+         for(var i = 0; i < userLength; i++) {
+           var pickInput = input[Math.floor(Math.random() * input.length)];
+           getPassword.push(pickInput);
 
+           console.log(pickInput);
+         }
+          ps = getPassword.join(""); 
+          return ps
+  
+      }
+      
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
