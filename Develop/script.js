@@ -66,6 +66,20 @@ var generatePassword = function() {
           input = upperCase.concat(lowerCase)
         }
 
+          else if (confirmSpecialCharacter) {
+            input = character;
+
+          } else if (confirmNumber) {
+            input = number;
+
+          } else if (confirmUpperCase) {
+            input = upperCase;
+
+          } else if (confirmLowerCase) {
+            input = lowerCase;
+            
+          } 
+
   }else {
     alert("Must meet condition requirements!") ;
   }
