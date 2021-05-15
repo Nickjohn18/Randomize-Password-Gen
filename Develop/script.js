@@ -46,6 +46,25 @@ var generatePassword = function() {
       } else if(confirmNumber && confirmUpperCase && confirmLowerCase) {
         input = number.concat(lowerCase,upperCase);
       }
+        // for 2 options
+        else if(confirmSpecialCharacter && confirmNumber) {
+          input = character.concat(number)
+
+        } else if(confirmSpecialCharacter && confirmUpperCase) {
+          input = character.concat(upperCase)
+
+        } else if(confirmSpecialCharacter && confirmLowerCase) {
+          input = character.concat(lowerCase)
+
+        } else if(confirmUpperCase && confirmNumber) {
+          input = upperCase.concat(number)
+
+        } else if(confirmLowerCase && confirmNumber) {
+          input = lowerCase.concat(number)
+
+        } else if(confirmUpperCase && confirmLowerCase) {
+          input = upperCase.concat(lowerCase)
+        }
 
   }else {
     alert("Must meet condition requirements!") ;
